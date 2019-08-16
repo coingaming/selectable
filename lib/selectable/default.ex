@@ -20,7 +20,7 @@ defmodule Selectable.Default do
     }
 
     quote do
-      def options(%unquote(type){}) do
+      def options(%unquote(type){}, _) do
         unquote(type).all()
         |> Enum.map(fn unquote(pattern) ->
           {unquote(key_val), unquote(id_val)}
